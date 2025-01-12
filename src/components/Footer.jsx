@@ -34,7 +34,7 @@ const Footer = () => {
                                     </div>
                                     <div className='flex flex-col justify-center items-end text-end'>
                                           <p>Refokus is a pinoneering digital agency driven by design and empowered by technology.</p>
-                                          <button className='bg-blue-600 px-3 py-1 rounded mt-6'>Enterprice Partner</button>
+                                          <button className='bg-blue-600 px-2 py-1 rounded mt-6'><img src="https://cdn.prod.website-files.com/664dc8b6bc52b504509197e4/66bd4a1138d6a32addf4b6b2_premium_partner_badge_enterprise_blue.webp" className='w-36' alt="" /></button>
                                     </div>
                               </div>
                         </div>

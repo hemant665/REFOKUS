@@ -12,7 +12,7 @@ const Products = () => {
 
   return (
     <div className='w-full px-4 py-2 mt-20'>
-      {data.map((elem)=>  <Product value={elem} className="bg-neutral-400"/> )}
+      {data.map((elem,index)=>  <Product key={index} value={elem} className="bg-neutral-400"/> )}
      
     </div>
   )

@@ -35,7 +35,7 @@ const Marquees = () => {
       return (
             <>
                   <div className='flex flex-col mt-20 py-7'>
-                        {data.map((elem) => <Marquee value={elem} />)}
+                        {data.map((elem,index) => <Marquee key={index} value={elem} />)}
                   </div>
 
                   {/* <div className='mt-10 py-7 w-[100%] flex gap-14 overflow-x-auto'>
