@@ -1,5 +1,6 @@
 import React from 'react'
 import Marquee from './Marquee'
+import { motion } from 'motion/react'
 
 const Marquees = () => {
 
@@ -32,15 +33,13 @@ const Marquees = () => {
             "https://cdn.prod.website-files.com/664dc8b6bc52b504509197f0/66979aadafcf09e77ccdf8b0_logo-white.svg"
             ]
       ]
+
       return (
             <>
-                  <div className='flex flex-col mt-20 py-7'>
-                        {data.map((elem,index) => <Marquee key={index} value={elem} />)}
+                  <div className='flex flex-col w-full relative mt-16 py-20 overflow-hidden'>
+                        {data.map((elem,index) => <Marquee key={index} value={elem} direction={index === 0 ? "left" : "right"}/>)}
                   </div>
 
-                  {/* <div className='mt-10 py-7 w-[100%] flex gap-14 overflow-x-auto'>
-                        {data.map((elem) => <Marquee value={elem} />)}
-                  </div> */}
             </>
       )
 }

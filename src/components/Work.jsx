@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useScroll } from "motion/react"
-import { em } from 'motion/react-client'
+
 
 
 const Work = () => {
@@ -9,7 +9,7 @@ const Work = () => {
                   url: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNvZGluZ3xlbnwwfHwwfHx8MA%3D%3D",
                   top: "50%",
                   left: "50%",
-                  isActive: false
+                  isActive: false,
             },
             {
                   url: "https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNvZGluZ3xlbnwwfHwwfHx8MA%3D%3D",
@@ -47,13 +47,13 @@ const Work = () => {
 
       scrollYProgress.on("change", (data) => {
             function imageShow(arr) {
-                  setImages((prev) =>
-                        prev.map((item, index) =>
+                  setImages((prev) => (
+                        prev.map((item, index) => (
                               arr.indexOf(index) === -1
                                     ? ({ ...item, isActive: false })
                                     : { ...item, isActive: true }
-                        )
-                  );
+                        ))
+                  ));
             }
 
             switch (Math.floor(data * 100)) {
@@ -88,7 +88,7 @@ const Work = () => {
                         <h1 className='leading-none text-[28rem] font-medium select-none'>work</h1>
                         <div className='absolute h-full w-full top-0'>
                               {images.map((elem, index) => {
-                                    return <img src={elem.url} key={index} className={`absolute w-60 rounded-lg`} style={{ top: elem.top, left: elem.left }} alt="" />
+                                    return <img src={elem.isActive ===true && (elem.url)} key={index} className="absolute w-60 rounded-lg" style={{ top: elem.top, left: elem.left }} alt="" />
                               })}
                         </div>
                   </div>
