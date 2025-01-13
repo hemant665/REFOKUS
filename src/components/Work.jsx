@@ -60,22 +60,22 @@ const Work = () => {
                   case 0:
                         imageShow([]);
                         break;
-                  case 1:
+                  case 2:
                         imageShow([0]);
                         break;
-                  case 2:
+                  case 3:
                         imageShow([0, 1]);
                         break;
-                  case 3:
+                  case 5:
                         imageShow([0, 1, 2]);
                         break;
-                  case 4:
+                  case 6:
                         imageShow([0, 1, 2, 3]);
                         break;
-                  case 6:
+                  case 8:
                         imageShow([0, 1, 2, 3, 4]);
                         break;
-                  case 8:
+                  case 9:
                         imageShow([0, 1, 2, 3, 4, 5]);
                         break;
             }

@@ -15,6 +15,7 @@ const Products = () => {
   ]
 
   const [pos, setPos] = useState(0);
+  const [isHovered, setIsHovered] = useState(false)
   
   const mover = (val) => {
     setPos(val * 20)
@@ -37,11 +38,12 @@ const Products = () => {
   return (
     <div className='w-full px-4  mt-20 flex flex-col relative'>
       {data.map((elem, index) => <Product key={index} value={elem} index={index} mover={mover} className="bg-neutral-400" />)}
-      <div className='w-full h-full top-0  absolute pointer-events-none' >
+      <div onMouseEnter={()=>{setIsHovered(true)}} onMouseLeave={()=>{setIsHovered(false)}} className='w-full h-full top-0 absolute pointer-events-none' >
         <motion.div
           className='window absolute w-[30%] h-[20rem] overflow-hidden  '
-          initial={{ y: pos }}
-          animate={{ y: pos + `rem` }}
+          initial={{ y: pos  }}
+          animate={{ y: pos + `rem`}}
+          
           style={{ left: "25%" }}>
           <motion.div animate={{ y: -pos + `rem` }} className='w-full h-full'>
             <video 
